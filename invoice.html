@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="invoice-box" id="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="logo.png" alt="Company Logo" style="width:100%; max-width:300px;">
+                            </td>
+                            <td>
+                                <strong>Tax Invoice/Bill of Supply/Cash Memo<br>(Original for Recipient)</strong><br>
+                                <br>
+                                Invoice #: <span id="invoice-no"></span><br>
+                                Invoice Date: <span id="invoice-date"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong>Sold By:</strong><br>
+                                <span id="seller-details"></span>
+                            </td>
+                            <td>
+                                <strong>Billing Address:</strong><br>
+                                <span id="billing-details"></span><br>
+                                <strong>Shipping Address:</strong><br>
+                                <span id="shipping-details"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="details">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>Order Number: <span id="order-no"></span></td>
+                            <td>Order Date: <span id="order-date"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Place of Supply: <span id="place-of-supply"></span></td>
+                            <td>Place of Delivery: <span id="place-of-delivery"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Reverse Charge: <span id="reverse-charge"></span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="heading">
+                <td>Description</td>
+                <td>Unit Price</td>
+                <td>Quantity</td>
+                <td>Discount</td>
+                <td>Net Amount</td>
+                <td>Tax Rate</td>
+                <td>Tax Amount</td>
+                <td>Total</td>
+            </tr>
+            <tbody id="items-list">
+            </tbody>
+            <tr class="total">
+                <td colspan="7"></td>
+                <td>Total: <span id="total-amount"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Amount in Words: <span id="amount-in-words"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    For <span id="seller-name"></span>:<br>
+                    <img src="signature.png" alt="Signature" style="width:100px;"><br>
+                    Authorised Signatory
+                </td>
+            </tr>
+        </table>
+    </div>
+    <button onclick="generatePDF()">Download PDF</button>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</body>
+</html>
